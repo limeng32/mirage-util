@@ -1,6 +1,8 @@
-package limeng32.mirage.util;
+package limeng32.mirage.util.pojo;
 
 import java.util.Collection;
+
+import limeng32.mirage.util.MD5;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;

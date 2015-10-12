@@ -1,4 +1,4 @@
-package limeng32.mirage.util;
+package limeng32.mirage.util.pojo;
 
 import java.util.Collection;
 
