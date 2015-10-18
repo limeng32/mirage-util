@@ -1,12 +1,12 @@
 package limeng32.mirage.util.mapper;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface MapperFace<T> {
 
 	public T select(int id);
 
-	public List<T> selectAll(T t);
+	public Collection<T> selectAll(T t);
 
 	public void insert(T t);
 

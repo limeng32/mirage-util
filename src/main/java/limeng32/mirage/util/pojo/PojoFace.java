@@ -1,18 +1,14 @@
 package limeng32.mirage.util.pojo;
 
-import java.util.Collection;
-
 public interface PojoFace<T> {
 
-	/* 如果自身属于c则返回true，否则返回false */
-	boolean belongs(Collection<T> c);
+	Integer getId();
 
-	/* 去掉c中和自身id相同的元素 */
-	void quit(Collection<T> c);
+	void setId(Integer id);
 
-	/* 从c中获取和自身id相同的对象并返回 */
-	T getById(Collection<T> c);
-
-	/* 获取哈希值 */
+	/* 获取供缓存使用的key值 */
 	String getHash();
+
+	/* 在业务逻辑上相同 */
+	boolean equalsExactly(Object obj);
 }

@@ -1,11 +1,11 @@
 package limeng32.mirage.util.service;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
+import java.util.Collection;
 
-import limeng32.mirage.util.pojo.PojoSupport;
-import limeng32.mirage.util.mapper.MapperFace;
 import limeng32.mirage.util.ReflectHelper;
+import limeng32.mirage.util.mapper.MapperFace;
+import limeng32.mirage.util.pojo.PojoSupport;
 
 public abstract class ServiceSupport<T extends PojoSupport<T>> implements
 		ServiceFace<T> {
@@ -14,7 +14,7 @@ public abstract class ServiceSupport<T extends PojoSupport<T>> implements
 		return mapper.select(id);
 	}
 
-	protected List<T> supportSelectAll(MapperFace<T> mapper, T t) {
+	protected Collection<T> supportSelectAll(MapperFace<T> mapper, T t) {
 		return mapper.selectAll(t);
 	}
 
