@@ -23,7 +23,6 @@ public class PojoTest {
 
 	@Test
 	public void testPojo() {
-		System.out.println(":" + a1.hashCode());
 		Assert.assertEquals(a1.hashCode(), a2.hashCode());
 		Assert.assertTrue(a1.equals(a2));
 		Assert.assertFalse(a1.equalsExactly(a2));

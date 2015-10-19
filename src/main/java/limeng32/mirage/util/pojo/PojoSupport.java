@@ -1,6 +1,6 @@
 package limeng32.mirage.util.pojo;
 
-import limeng32.mirage.util.MD5;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
@@ -12,11 +12,9 @@ public abstract class PojoSupport<T extends PojoSupport<T>> implements
 	abstract public Integer getId();
 
 	@Override
-	abstract public void setId(Integer id);
-
 	@JSONField(serialize = false)
-	public String getHash() {
-		return MD5.MD5Purity(JSON.toJSONString(this));
+	public String getCacheKey() {
+		return DigestUtils.md5Hex(JSON.toJSONString(this));
 	}
 
 	@Override

@@ -17,6 +17,9 @@ public class LoginLog extends PojoSupport<LoginLog> implements Serializable {
 		return id;
 	}
 
+	/**
+	 * 为确保hashCode稳定性，仅在测试代码中保留setId方法，在产品代码无setId方法
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
