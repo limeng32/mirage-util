@@ -7,16 +7,16 @@ import org.junit.Test;
 
 public class PojoTest {
 
-	Account a1;
+	AccountForTest a1;
 
-	Account a2;
+	AccountForTest a2;
 
 	@Before
 	public void prepare() {
-		a1 = new Account();
+		a1 = new AccountForTest();
 		a1.setId(1);
 		a1.setEmail("a");
-		a2 = new Account();
+		a2 = new AccountForTest();
 		a2.setId(1);
 		a2.setEmail("b");
 	}

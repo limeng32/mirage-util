@@ -22,12 +22,12 @@ public abstract class ServiceSupport<T extends PojoSupport<T>> implements
 		mapper.insert(t);
 	}
 
-	protected void supportUpdate(MapperFace<T> mapper, T t) {
-		mapper.update(t);
+	protected int supportUpdate(MapperFace<T> mapper, T t) {
+		return mapper.update(t);
 	}
 
-	protected void supportUpdatePersistent(MapperFace<T> mapper, T t) {
-		mapper.updatePersistent(t);
+	protected int supportUpdatePersistent(MapperFace<T> mapper, T t) {
+		return mapper.updatePersistent(t);
 	}
 
 	protected void supportRetrieve(MapperFace<T> mapper, T t) {
@@ -50,8 +50,8 @@ public abstract class ServiceSupport<T extends PojoSupport<T>> implements
 		}
 	}
 
-	protected void supportDelete(MapperFace<T> mapper, T t) {
-		mapper.delete(t);
+	protected int supportDelete(MapperFace<T> mapper, T t) {
+		return mapper.delete(t);
 	}
 
 	protected int supportCount(MapperFace<T> mapper, T t) {

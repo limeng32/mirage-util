@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import limeng32.mirage.util.pojo.PojoSupport;
 
-public class Account extends PojoSupport<Account> implements Serializable {
+public class AccountForTest extends PojoSupport<AccountForTest> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -21,7 +21,7 @@ public class Account extends PojoSupport<Account> implements Serializable {
 	 * */
 	private boolean activated;
 
-	private java.util.Collection<LoginLog> loginLog;
+	private java.util.Collection<LoginLogForTest> loginLogForTest;
 
 	public Integer getId() {
 		return id;
@@ -66,54 +66,54 @@ public class Account extends PojoSupport<Account> implements Serializable {
 		this.activated = activated;
 	}
 
-	public java.util.Collection<LoginLog> getLoginLog() {
-		if (loginLog == null)
-			loginLog = new java.util.LinkedHashSet<LoginLog>();
-		return loginLog;
+	public java.util.Collection<LoginLogForTest> getLoginLogForTest() {
+		if (loginLogForTest == null)
+			loginLogForTest = new java.util.LinkedHashSet<LoginLogForTest>();
+		return loginLogForTest;
 	}
 
-	public java.util.Iterator<LoginLog> getIteratorLoginLog() {
-		if (loginLog == null)
-			loginLog = new java.util.LinkedHashSet<LoginLog>();
-		return loginLog.iterator();
+	public java.util.Iterator<LoginLogForTest> getIteratorLoginLogForTest() {
+		if (loginLogForTest == null)
+			loginLogForTest = new java.util.LinkedHashSet<LoginLogForTest>();
+		return loginLogForTest.iterator();
 	}
 
-	public void setLoginLog(java.util.Collection<LoginLog> newLoginLog) {
+	public void setLoginLogForTest(java.util.Collection<LoginLogForTest> newLoginLogForTest) {
 		removeAllLoginLog();
-		for (java.util.Iterator<LoginLog> iter = newLoginLog.iterator(); iter
+		for (java.util.Iterator<LoginLogForTest> iter = newLoginLogForTest.iterator(); iter
 				.hasNext();)
-			addLoginLog((LoginLog) iter.next());
+			addLoginLogForTest((LoginLogForTest) iter.next());
 	}
 
-	public void addLoginLog(LoginLog newLoginLog) {
-		if (newLoginLog == null)
+	public void addLoginLogForTest(LoginLogForTest newLoginLogForTest) {
+		if (newLoginLogForTest == null)
 			return;
-		if (this.loginLog == null)
-			this.loginLog = new java.util.LinkedHashSet<LoginLog>();
-		if (!this.loginLog.contains(newLoginLog)) {
-			this.loginLog.add(newLoginLog);
-			newLoginLog.setAccount(this);
+		if (this.loginLogForTest == null)
+			this.loginLogForTest = new java.util.LinkedHashSet<LoginLogForTest>();
+		if (!this.loginLogForTest.contains(newLoginLogForTest)) {
+			this.loginLogForTest.add(newLoginLogForTest);
+			newLoginLogForTest.setAccountForTest(this);
 		}
 	}
 
-	public void removeLoginLog(LoginLog oldLoginLog) {
-		if (oldLoginLog == null)
+	public void removeLoginLogForTest(LoginLogForTest oldLoginLogForTest) {
+		if (oldLoginLogForTest == null)
 			return;
-		if (this.loginLog != null)
-			if (this.loginLog.contains(oldLoginLog)) {
-				this.loginLog.remove(oldLoginLog);
-				oldLoginLog.setAccount((Account) null);
+		if (this.loginLogForTest != null)
+			if (this.loginLogForTest.contains(oldLoginLogForTest)) {
+				this.loginLogForTest.remove(oldLoginLogForTest);
+				oldLoginLogForTest.setAccountForTest((AccountForTest) null);
 			}
 	}
 
 	public void removeAllLoginLog() {
-		if (loginLog != null) {
-			LoginLog oldLoginLog;
-			for (java.util.Iterator<LoginLog> iter = getIteratorLoginLog(); iter
+		if (loginLogForTest != null) {
+			LoginLogForTest oldLoginLogForTest;
+			for (java.util.Iterator<LoginLogForTest> iter = getIteratorLoginLogForTest(); iter
 					.hasNext();) {
-				oldLoginLog = (LoginLog) iter.next();
+				oldLoginLogForTest = (LoginLogForTest) iter.next();
 				iter.remove();
-				oldLoginLog.setAccount((Account) null);
+				oldLoginLogForTest.setAccountForTest((AccountForTest) null);
 			}
 		}
 	}
@@ -126,7 +126,7 @@ public class Account extends PojoSupport<Account> implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Account other = (Account) obj;
+		AccountForTest other = (AccountForTest) obj;
 		if (activated != other.activated)
 			return false;
 		if (email == null) {
@@ -139,10 +139,10 @@ public class Account extends PojoSupport<Account> implements Serializable {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (loginLog == null) {
-			if (other.loginLog != null)
+		if (loginLogForTest == null) {
+			if (other.loginLogForTest != null)
 				return false;
-		} else if (!loginLog.equals(other.loginLog))
+		} else if (!loginLogForTest.equals(other.loginLogForTest))
 			return false;
 		if (name == null) {
 			if (other.name != null)

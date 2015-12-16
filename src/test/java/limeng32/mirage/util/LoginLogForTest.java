@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 import limeng32.mirage.util.pojo.PojoSupport;
 
-public class LoginLog extends PojoSupport<LoginLog> implements Serializable {
+public class LoginLogForTest extends PojoSupport<LoginLogForTest> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private java.util.Date loginTime;
 	private java.lang.String loginIP;
 
-	private Account account;
+	private AccountForTest accountForTest;
 
 	public Integer getId() {
 		return id;
@@ -40,20 +40,20 @@ public class LoginLog extends PojoSupport<LoginLog> implements Serializable {
 		this.loginIP = loginIP;
 	}
 
-	public Account getAccount() {
-		return account;
+	public AccountForTest getAccountForTest() {
+		return accountForTest;
 	}
 
-	public void setAccount(Account newAccount) {
-		if (this.account == null || !this.account.equals(newAccount)) {
-			if (this.account != null) {
-				Account oldAccount = this.account;
-				this.account = null;
-				oldAccount.removeLoginLog(this);
+	public void setAccountForTest(AccountForTest newAccountForTest) {
+		if (this.accountForTest == null || !this.accountForTest.equals(newAccountForTest)) {
+			if (this.accountForTest != null) {
+				AccountForTest oldAccountForTest = this.accountForTest;
+				this.accountForTest = null;
+				oldAccountForTest.removeLoginLogForTest(this);
 			}
-			if (newAccount != null) {
-				this.account = newAccount;
-				this.account.addLoginLog(this);
+			if (newAccountForTest != null) {
+				this.accountForTest = newAccountForTest;
+				this.accountForTest.addLoginLogForTest(this);
 			}
 		}
 	}
@@ -66,11 +66,11 @@ public class LoginLog extends PojoSupport<LoginLog> implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		LoginLog other = (LoginLog) obj;
-		if (account == null) {
-			if (other.account != null)
+		LoginLogForTest other = (LoginLogForTest) obj;
+		if (accountForTest == null) {
+			if (other.accountForTest != null)
 				return false;
-		} else if (!account.equals(other.account))
+		} else if (!accountForTest.equals(other.accountForTest))
 			return false;
 		if (id == null) {
 			if (other.id != null)
