@@ -7,6 +7,4 @@ public interface PojoFace<T> {
 	/* 获取供缓存使用的key值 */
 	String getCacheKey();
 
-	/* 在业务逻辑上相同 */
-	boolean equalsExactly(Object obj);
 }

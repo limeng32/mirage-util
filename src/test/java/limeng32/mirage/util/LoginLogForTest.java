@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 import limeng32.mirage.util.pojo.PojoSupport;
 
-public class LoginLogForTest extends PojoSupport<LoginLogForTest> implements Serializable {
+public class LoginLogForTest extends PojoSupport<LoginLogForTest> implements
+		Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Integer id;
@@ -45,7 +46,8 @@ public class LoginLogForTest extends PojoSupport<LoginLogForTest> implements Ser
 	}
 
 	public void setAccountForTest(AccountForTest newAccountForTest) {
-		if (this.accountForTest == null || !this.accountForTest.equals(newAccountForTest)) {
+		if (this.accountForTest == null
+				|| !this.accountForTest.equals(newAccountForTest)) {
 			if (this.accountForTest != null) {
 				AccountForTest oldAccountForTest = this.accountForTest;
 				this.accountForTest = null;
@@ -58,7 +60,6 @@ public class LoginLogForTest extends PojoSupport<LoginLogForTest> implements Ser
 		}
 	}
 
-	@Override
 	public boolean equalsExactly(Object obj) {
 		if (this == obj)
 			return true;

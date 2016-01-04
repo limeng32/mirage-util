@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 import limeng32.mirage.util.pojo.PojoSupport;
 
-public class AccountForTest extends PojoSupport<AccountForTest> implements Serializable {
+public class AccountForTest extends PojoSupport<AccountForTest> implements
+		Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -78,10 +79,11 @@ public class AccountForTest extends PojoSupport<AccountForTest> implements Seria
 		return loginLogForTest.iterator();
 	}
 
-	public void setLoginLogForTest(java.util.Collection<LoginLogForTest> newLoginLogForTest) {
+	public void setLoginLogForTest(
+			java.util.Collection<LoginLogForTest> newLoginLogForTest) {
 		removeAllLoginLog();
-		for (java.util.Iterator<LoginLogForTest> iter = newLoginLogForTest.iterator(); iter
-				.hasNext();)
+		for (java.util.Iterator<LoginLogForTest> iter = newLoginLogForTest
+				.iterator(); iter.hasNext();)
 			addLoginLogForTest((LoginLogForTest) iter.next());
 	}
 
@@ -118,7 +120,6 @@ public class AccountForTest extends PojoSupport<AccountForTest> implements Seria
 		}
 	}
 
-	@Override
 	public boolean equalsExactly(Object obj) {
 		if (this == obj)
 			return true;
