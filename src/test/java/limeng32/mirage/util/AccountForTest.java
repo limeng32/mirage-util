@@ -2,6 +2,8 @@ package limeng32.mirage.util;
 
 import java.io.Serializable;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import limeng32.mirage.util.pojo.PojoSupport;
 
 public class AccountForTest extends PojoSupport<AccountForTest> implements
@@ -73,6 +75,7 @@ public class AccountForTest extends PojoSupport<AccountForTest> implements
 		return loginLogForTest;
 	}
 
+	@JSONField(serialize = false)
 	public java.util.Iterator<LoginLogForTest> getIteratorLoginLogForTest() {
 		if (loginLogForTest == null)
 			loginLogForTest = new java.util.LinkedHashSet<LoginLogForTest>();
@@ -95,6 +98,17 @@ public class AccountForTest extends PojoSupport<AccountForTest> implements
 		if (!this.loginLogForTest.contains(newLoginLogForTest)) {
 			this.loginLogForTest.add(newLoginLogForTest);
 			newLoginLogForTest.setAccountForTest(this);
+		} else {
+			for (LoginLogForTest temp : this.loginLogForTest) {
+				if (newLoginLogForTest.equals(temp)) {
+					if (temp != newLoginLogForTest) {
+						removeLoginLogForTest(temp);
+						this.loginLogForTest.add(newLoginLogForTest);
+						newLoginLogForTest.setAccountForTest(this);
+					}
+					break;
+				}
+			}
 		}
 	}
 
@@ -103,6 +117,14 @@ public class AccountForTest extends PojoSupport<AccountForTest> implements
 			return;
 		if (this.loginLogForTest != null)
 			if (this.loginLogForTest.contains(oldLoginLogForTest)) {
+				for (LoginLogForTest temp : this.loginLogForTest) {
+					if (oldLoginLogForTest.equals(temp)) {
+						if (temp != oldLoginLogForTest) {
+							temp.setAccountForTest((AccountForTest) null);
+						}
+						break;
+					}
+				}
 				this.loginLogForTest.remove(oldLoginLogForTest);
 				oldLoginLogForTest.setAccountForTest((AccountForTest) null);
 			}

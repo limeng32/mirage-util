@@ -47,7 +47,7 @@ public class LoginLogForTest extends PojoSupport<LoginLogForTest> implements
 
 	public void setAccountForTest(AccountForTest newAccountForTest) {
 		if (this.accountForTest == null
-				|| !this.accountForTest.equals(newAccountForTest)) {
+				|| this.accountForTest != newAccountForTest) {
 			if (this.accountForTest != null) {
 				AccountForTest oldAccountForTest = this.accountForTest;
 				this.accountForTest = null;
@@ -58,37 +58,6 @@ public class LoginLogForTest extends PojoSupport<LoginLogForTest> implements
 				this.accountForTest.addLoginLogForTest(this);
 			}
 		}
-	}
-
-	public boolean equalsExactly(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		LoginLogForTest other = (LoginLogForTest) obj;
-		if (accountForTest == null) {
-			if (other.accountForTest != null)
-				return false;
-		} else if (!accountForTest.equals(other.accountForTest))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (loginIP == null) {
-			if (other.loginIP != null)
-				return false;
-		} else if (!loginIP.equals(other.loginIP))
-			return false;
-		if (loginTime == null) {
-			if (other.loginTime != null)
-				return false;
-		} else if (!loginTime.equals(other.loginTime))
-			return false;
-		return true;
 	}
 
 }

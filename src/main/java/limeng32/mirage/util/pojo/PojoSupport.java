@@ -1,7 +1,5 @@
 package limeng32.mirage.util.pojo;
 
-import java.util.Collection;
-
 import org.apache.commons.codec.digest.DigestUtils;
 
 import com.alibaba.fastjson.JSON;
@@ -44,13 +42,4 @@ public abstract class PojoSupport<T extends PojoSupport<T>> implements
 		return true;
 	}
 
-	@Override
-	public T extract(Collection<T> c) {
-		for (T i : c) {
-			if (this.hashCode() == i.hashCode()) {
-				return i;
-			}
-		}
-		return null;
-	}
 }
