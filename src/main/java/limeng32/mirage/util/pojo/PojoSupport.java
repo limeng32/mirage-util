@@ -35,8 +35,7 @@ public abstract class PojoSupport<T extends PojoSupport<T>> implements
 			return false;
 		PojoSupport<?> other = (PojoSupport<?>) obj;
 		if (getId() == null) {
-			if (other.getId() != null)
-				return false;
+			return false;
 		} else if (!getId().equals(other.getId()))
 			return false;
 		return true;
