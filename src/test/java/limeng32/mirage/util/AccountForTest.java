@@ -2,9 +2,9 @@ package limeng32.mirage.util;
 
 import java.io.Serializable;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import limeng32.mirage.util.pojo.PojoSupport;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 public class AccountForTest extends PojoSupport<AccountForTest> implements
 		Serializable {
@@ -139,6 +139,7 @@ public class AccountForTest extends PojoSupport<AccountForTest> implements
 				iter.remove();
 				oldLoginLogForTest.setAccountForTest((AccountForTest) null);
 			}
+			loginLogForTest.clear();
 		}
 	}
 
