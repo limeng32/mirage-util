@@ -16,7 +16,6 @@ public class UploadedFile implements Serializable {
 
 	private String url;
 
-	@JSONField(serialize = false)
 	private String message;
 
 	public Integer getStatus() {
