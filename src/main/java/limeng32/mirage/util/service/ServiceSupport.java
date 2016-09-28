@@ -10,7 +10,7 @@ import limeng32.mirage.util.pojo.PojoSupport;
 public abstract class ServiceSupport<T extends PojoSupport<T>> implements
 		ServiceFace<T> {
 
-	protected T supportSelect(MapperFace<T> mapper, int id) {
+	protected T supportSelect(MapperFace<T> mapper, Object id) {
 		return mapper.select(id);
 	}
 

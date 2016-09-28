@@ -4,7 +4,7 @@ import java.util.Collection;
 
 public interface MapperFace<T> {
 
-	public T select(int id);
+	public T select(Object id);
 
 	public Collection<T> selectAll(T t);
 

@@ -9,7 +9,7 @@ public abstract class PojoSupport<T extends PojoSupport<T>> implements
 		PojoFace<T> {
 
 	@Override
-	abstract public Integer getId();
+	abstract public Object getId();
 
 	@Override
 	@JSONField(serialize = false)
