@@ -2,8 +2,6 @@ package limeng32.mirage.util.upload;
 
 import java.io.Serializable;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 public class UploadedFile implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -17,6 +15,8 @@ public class UploadedFile implements Serializable {
 	private String url;
 
 	private String message;
+
+	private Object data;
 
 	public Integer getStatus() {
 		return status;
@@ -56,6 +56,14 @@ public class UploadedFile implements Serializable {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Object getData() {
+		return data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
 	}
 
 }
